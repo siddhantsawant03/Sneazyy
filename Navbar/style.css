@@ -1,0 +1,118 @@
+
+  .gap {
+    /* width: 10px; */
+    left: 10px;
+    right:10px;
+    padding: 25px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 2%;
+    left:3%;
+  }
+  .navbar{
+    overflow: auto;
+    background: #DB3B3B;
+    top:0;
+    left:8px;
+    right: 0;
+    position: fixed;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    font-size: medium;
+    justify-content: space-between;
+    
+  }
+  .navbar li{
+    float:left;
+    list-style: none;
+    padding:5px 5px ;
+    margin: 15px 15px;
+  }
+  .navbar li a{
+    padding: 3px 5px;
+    text-decoration: none;
+    color: #000;
+  }
+  .navbar li a:hover{
+    color: #000;
+
+  }
+  .search{
+    float: right;
+    color: #000;
+    padding: 17px 75px;
+    left: 100%
+    
+  }
+
+  .imgcontent {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-style:inherit;
+    font-size:2.5cm;
+    color: #fff;
+  }
+
+  .extra {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-style:italic;
+    font-size:1.5cm;
+    color: #fff;      
+  }
+
+  .navbar input{
+    border: 2px #E31CA8;
+    border-radius: 14px;
+    padding: 3px;
+    width: 250px;
+  }
+
+  .background {
+    width: 1250px;
+    height: 660px;
+    margin-top: 8%;
+    padding-top:8% ;
+  }
+
+  .content{
+    font-size:xx-large;
+  }
+
+  .tag1 {
+    font: bold;
+    font-size:xx-large;
+  }
+
+  .btn {
+    left: 50px;
+    display: inline-block;
+    margin-top: 30px;
+    border: #000;
+    color: #000;
+    font-size: 15px;
+    background:rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 10px 40px;
+  }
+
+  .column{
+    float: left;
+    width: 275px;
+    padding: 44px;
+  }
+
+  .row::after{
+    content: "";
+    clear: both;
+    display: table;
+
+  }
