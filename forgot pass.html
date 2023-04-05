@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Set Password</title>
+<link rel="stylesheet" type="text/css" href="forgot pass.css">
+<script>
+
+function printError(elemId, hintMsg){
+document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+function validateForm(){
+var pass = document.loginForm.password.value;
+var conpass = document.loginForm.password.value;
+
+
+var passErr = conpassErr = true;
+
+if(pass == "") {
+        printError("passErr", "Please enter a password");
+    } else {
+        // Regular expression for basic email validation
+        var regex = /^(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])(?=\D*\d)(?=[^!#%]*[!#%])[A-Za-z0-9!#%]{8,32}$/;
+        if(regex.test(email) === false) {
+            printError("passErr", "Please enter a valid password");
+        } else{
+            printError("passErr", "");
+            passErr = false;
+        }
+    }
+
+    if(conpass == "") {
+        printError("conpassErr", "Please enter a valid password");
+    } else {
+        if(regex.test(email) != pass) {
+            printError("conpassErr", "Please enter a valid password");
+        } else{
+            printError("conpassErr", "");
+            conpassErr = false;
+        }
+    }
+
+    if((passErr||conpassErr) == true) {
+       return false;
+    } else {
+        // Creating a string from input data for preview
+        var dataPreview = "You've entered the following details: \n" +
+                          "Password:"+ pass + "\n" +
+                          "Confirm Paasword:" + conpass + "\n";
+                        
+        
+        // Display input data in a dialog box before submitting the form
+        alert(dataPreview);
+    }
+
+};
+
+</script>
+</head>
+<body>
+
+<form name="loginForm" onsubmit="return validateForm()" method="post">
+<h3>Set Password</h3>
+
+<div class="row">
+<label> <B>Previous Password</label>
+<input type="text" name="pass">
+<div class="error" id="passErr"></div>
+</div>
+
+<div class="row">
+    <label> <B>New Password</label>
+    <input type="tex" name="conpass">
+    <div class="error" id="conpassErr"></div>
+    </div>
+
+<div class="row">
+<input type="submit" value="Submit" href="otp form.html">
+</div>
+
+</form>
+</body>
+</html>

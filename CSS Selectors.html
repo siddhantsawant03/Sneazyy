@@ -1,0 +1,184 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+ <h2>Descendant Selector</h2>   
+ <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui id quasi consectetur error eaque odit quisquam, ipsam minima, pariatur consequatur expedita
+      eos incidunt voluptatem facere sapiente numquam voluptatibus ad. Eos.</p>
+      <div>
+          <p> para 1 is in div</p>
+          <p> para 2 is in div</p>
+          <section><p> para 3 is in div</p></section>
+      </div>
+      <p> para 4 is in div</p>
+      <p> para 5 is in div</p>
+</body>
+</html>
+
+
+
+
+code 2
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div>p{
+            background-color: aqua;
+        }
+        </style>
+</head>
+<body>
+ <h2>Child Selector</h2>   
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, at? Dignissimos aspernatur odit fugit blanditiis nesciunt? Iure quis numquam,
+      iste magnam earum, consequatur assumenda fugit voluptas ea molestiae voluptatem doloribus.</p>
+      
+        <div>
+            <p> para 1 is in div</p>
+            <p> para 2 is in div</p>
+            <section><p> para 3 is in div</p></section>
+        
+        <p> para 4 is in div</p>
+        </div>
+        <p> para 5 is in div</p>
+
+      
+</body>
+</html>
+
+
+
+code 3
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p+p{
+            background-color: aqua;
+        }
+        </style>
+</head>
+<body>
+ <h2>Adjacent Sibling Selector</h2>   
+ <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate dolor aliquid consectetur fugit. Sed expedita voluptas
+      necessitatibus, quibusdam, ipsum temporibus porro ullam pariatur possimus velit at corporis dolore dolorum neque?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate dolor aliquid consectetur fugit. Sed expedita voluptas
+        necessitatibus, quibusdam, ipsum temporibus porro ullam pariatur possimus velit at corporis dolore dolorum neque?</p>
+        <div>
+            <p>para 1 is in div</p>
+            <p>para 2 is in div</p>
+        </div>
+        <p>para 3 is in div</p>
+        <p>para 4 is in div</p>
+        <div>
+            <p>para 5 is in div</p>
+            <p>para 6 is in div</p>
+        </div>
+        <p>para 7 is in div</p>
+        <p>para 8 is in div</p>
+        
+
+</body>
+</html>
+
+
+
+
+code 4
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div~p
+        body{
+            text-align: center;
+            color: aqua;
+        }
+        div{
+            font-size: 32px;
+        }
+        </style>
+</head>
+<body>
+ <h1>general Sibling Selector</h1> 
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est molestias error quidem voluptas vel provident aliquam deleniti 
+     placeat officiis voluptatem voluptate esse consequuntur non quos nam ad, explicabo blanditiis sed.</p>  
+     <div> it is a div element
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est molestias error quidem voluptas vel provident aliquam deleniti 
+        placeat officiis voluptatem voluptate esse consequuntur non quos nam ad, explicabo blanditiis sed.</p>
+     </div>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est molestias error quidem voluptas vel provident aliquam deleniti 
+            placeat officiis voluptatem voluptate esse consequuntur non quos nam ad, explicabo blanditiis sed.</p> 
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est molestias error quidem voluptas vel provident aliquam deleniti 
+                placeat officiis voluptatem voluptate esse consequuntur non quos nam ad, explicabo blanditiis sed.</p> 
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p::first-letter {
+                color:#004242;
+                font-size: xx-large;
+            }
+
+            p::first-line {
+                color:#004242;
+                font-size: small-caps;
+            }
+
+            ::marker {
+                color: #004242;
+                font-size: 23px;
+            }
+
+            ::selection {
+                color: #004242;
+                background-color: bisque;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est molestias error quidem voluptas vel provident aliquam deleniti 
+            placeat officiis voluptatem voluptate esse consequuntur non quos nam ad, explicabo blanditiis sed.  
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est molestias error quidem voluptas vel provident aliquam deleniti 
+            placeat officiis voluptatem voluptate esse consequuntur non quos nam ad, explicabo blanditiis sed.</p>
+        <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+        </ol>
+    </body>
+</html>

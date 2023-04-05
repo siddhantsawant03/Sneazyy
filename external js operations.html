@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var num1,num2.res,temp;
+            function fun() {
+                num1=parseInt(document.getElementById("one").value);
+                num2=parseInt(document.getElementById("two").value);
+
+                if(num1 && num2) 
+                {
+                    temp=document.getElementById("res");
+                    temp.style.display="block";
+                    
+                    res=num1+num2;
+                    document.getElementById("add").value=res;
+
+                    document.getElementById("sub").value=res;
+                    res=num1-num2;
+
+                    document.getElementById("mul").value=res;
+                    res=num1*num2;
+
+                    document.getElementById("div").value=res;
+                    res=num1/num2;
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        Enter First Number:<input id="one"><br/><br/>
+        Enter Second Number:<input id="two"></body></p>
+
+        <p><button onclick="fun()">Add,subtract,multiplication & division</button></p>
+
+        <p id="res" style="display:none;">
+        Addition Result=<input id="add"><br/><br/>
+        Subtraction Result=<input id="sub"><br/><br/>
+        Multiplication Result=<input id="mul"><br/><br/>
+        Division Result=<input id="div"><br/><br/>
+        </p>
+
+    </body>
+</html> -->
+
+<head>
+    <script>
+    var numOne,numTwo,res,temp;
+    function fun(){
+    numOne=parseInt(document.getElementById("one").value);
+    numTwo=parseInt(document.getElementById("two").value);
+    
+    if(numOne && numTwo)
+    {
+    temp=document.getElementById("res");
+    temp.style.display="block";
+    res=numOne+numTwo;
+    document.getElementById("add").value=res;
+    res=numOne-numTwo;
+    document.getElementById("subtract").value=res;
+    res=numOne*numTwo;
+    document.getElementById("multiply").value=res;
+    res=numOne/numTwo;
+    document.getElementById("divide").value=res;
+    }
+    }
+    
+    
+    </script>
+    </head>
+    <body>
+    
+    Enter first number:<input id="one"><br></br>
+    Enter second number:<input id="two"><br></br>
+    
+    <p><button onclick="fun()">Add,Subtract,Multiply,Divide </button></p>
+    
+    <p id="res" style="display: none;">
+    Addition Result=<input id="add"><br></br>
+    Subtraction Result=<input id="subtract"><br></br>
+    Multiplication Result=<input id="multiply"><br></br>
+    Division Result=<input id="divide"><br></br>
+    </p>
+    
+    </body>
+    </html>

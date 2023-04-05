@@ -1,0 +1,75 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #08b634;
+}
+
+form input {
+    height: 30px;
+    width: 30px;
+}
+
+.container {
+    background-color: #fff ;
+    padding: 40px 70px;
+    row-gap: 0.5px;
+    border-radius: 20px;
+}
+
+form .input-field {
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+:where(.container,form,.input-field,header) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container header {
+    height: 50px;
+    width: 50px;
+    background: #08b634;
+    color: #fff;
+    font-size: 40px;
+    border-radius: 50%;
+}
+
+.container h4 {
+    font-size: 1.25rem;
+    color: #454545;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-field input {
+    height: 45px;
+    width: 42px;
+    border-radius: 6px;
+    outline: none;
+    border: 2px solid #454545;
+    text-align: center;
+}
+
+.input-field input::-webkit-inner-spin-button,
+.input-field input::-webkit-outer-spin-button {
+    display: none;
+}
+
+form button {
+    margin-top: 25px;
+    background: #08b634;
+    border: 0;
+    height: 35px;
+    width: 65%;
+    font-size: 15px;
+    border-radius: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form button:hover {
+    background: #49bd66;
+}

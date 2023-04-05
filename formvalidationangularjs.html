@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Angular JS Filters</title>
+        <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+        </script>
+        <style>
+            .error{
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body ng-app="">
+        <div class="con">
+            <form name="myform" novalidate>
+                <h1>Form</h1>
+                <label>Full Name</label>
+                <input type="text" name="name" ng-model="name" pattern="[a-zA-Z]{1,}" required><br>
+                <span ng-show="myform.$submitted || myform.name.$dirty">
+                    <span class="error" ng-show="myform.name.$error.pattern">Name cannot be a number</span>
+                    <span class="error" ng-show="myform.name.$error.required">Name not valid</span>
+                </span><br><br>
+
+                <label>Email</label>
+                <input type="text" name="email" ng-model="email" ng-pattern="/^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/" required><br>
+                <span ng-show="myform.$submitted || myform.email.$dirty">
+                    <span class="error" ng-show="myform.email.$error.pattern">Email is required</span>
+                </span><br><br>
+
+                <label>Mobile Number</label>
+                <input type="number" name="mno" ng-model="mno" ng-minlength="10" ng-maxlength="10" required><br>
+                <span ng-show="myform.$submitted || myform.mno.$dirty">
+                    <span class="error" ng-show="myform.mno.$error.required">Mobile Number not valid</span>
+                    <span class="error" ng-show="((myform.mno.$error.minlength || myform.mno.$error.maxlength) && myform.mno.$dirty)">Mobile Number must be 10 digits</span>
+                </span><br><br>
+
+                <label>Gender</label><br>
+                <input type="radio" name="gender" ng-model="gender" ng-value="Male" required>
+                <label>Male</label>
+                <input type="radio" name="gender" ng-model="gender" ng-value="Female" required>
+                <label>Female</label>
+                <input type="radio" name="gender" ng-model="gender" ng-value="Others" required>
+                <label>Others</label>
+                <span ng-show="myform.$submitted || myform.gender.$dirty">
+                    <span class="error" ng-show="myform.gender.$error.required">Choose an option</span>
+                </span><br><br>
+
+                <label>Date of Birth</label>
+                <input type="date" name="date" ng-model="date" required><br>
+                <span ng-show="myform.$submitted || myform.date.$dirty">
+                    <span class="error" ng-show="myform.date.$error.required">Choose a date</span>
+                </span><br><br>
+
+                <label>Address</label>
+                <textarea name="address" ng-model="address" required></textarea><br>
+                <span ng-show="myform.$submitted || myform.address.$dirty">
+                    <span class="error" ng-show="myform.address.$error.required">Address is required</span>
+                </span><br><br>
+
+                <label>Password</label>
+                <input type="text" name="pass" ng-model="pass" pattern="[a-zA-Z]{8,}" required><br>
+                <span ng-show="myform.$submitted || myform.pass.$dirty">
+                    <span class="error" ng-show="myform.pass.$error.required">Password required</span>
+                    <span class="error" ng-show="myform.pass.$error.pattern">Password not valid</span>
+                </span><br><br>
+
+                <!-- <label>Course</label>
+                <select name="course" ng-model="course" required>
+                    <option>MBA Tech</option>
+                    <option>MBA Tech</option>
+                    <option>MBA Tech</option>
+                </select>
+                <span ng-show="myform.$submitted || myform.course.$dirty">
+                    <span class="error" ng-show="myform.course.$error.required">Choose Course</span>
+                </span> -->
+
+                <button>Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

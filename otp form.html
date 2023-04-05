@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="otp form.css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <title>OTP Verification Form</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <i class="bx bxs-check-shield"></i>
+            </header>
+            <h4>Enter you OTP:</h4>
+            <form>
+                <div class="input-field">
+                    <input type="number" />
+                    <input type="number" />
+                    <input type="number" />
+                    <input type="number" />
+                </div>
+
+                <button>Verify OTP</button>
+            </form>
+        </div>
+
+        <!--OTP Generator-->
+        <!-- function generateOTP() {
+          
+            // Declare a digits variable 
+            // which stores all digits
+            var digits = '0123456789';
+            let OTP = '';
+            for (let i = 0; i < 4; i++ ) {
+                OTP += digits[Math.floor(Math.random() * 10)];
+            }
+            return OTP;
+        }
+          
+        document.write("OTP of 4 digits: ")
+        document.write( generateOTP() ); -->
+        
+    </body>
+</html>

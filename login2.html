@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="form validation.css">
+<script>
+
+function printError(elemId, hintMsg){
+document.getElementById(elemId).innerHTML = hintMsg;
+}
+
+function validateForm(){
+var username =  document.loginForm.username.value;
+var password = document.loginForm.password.value;
+
+
+var usernameErr = passwordErr = true;
+
+// Validate username
+if(username == ""){
+printError("usernameErr", "Please enter your username");
+}else{
+var regex = /^[a-zA-Z\s]+$/;
+if(regex.test(username) === false){
+printError("usernameErr", "Please enter a valid username");
+}else{
+printError("usernameErr", "");
+usernameErr = false;
+}
+}
+
+// Validate password
+if(password == ""){
+printError("passwordErr", "Please enter your password");
+}else{
+var regex = /^[a-zA-Z\s]+$/;
+if(regex.test(password) === false){
+printError("passwordErr", "Wrong password!");
+}else{
+printError("passwordErr", "");
+passwordErr = false;
+}
+}
+
+};
+
+
+
+
+</script>
+</head>
+<body>
+
+<form name="loginForm" onsubmit="return validateForm()" method="post">
+<h3>Login Here</h3>
+
+
+<div class="row">
+<label> <B>Username</label>
+<input type="text" name="username">
+<div class="error" id="usernameErr"></div>
+</div>
+
+
+<div class="row">
+<label> <B>Password</label>
+<input type="Password" name="password">
+<div class="error" id="passwordErr"></div>
+</div>
+
+
+<div class="row">
+<input type="submit" value="Submit">
+</div>
+
+</form>
+</body>
+</html>

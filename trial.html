@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <script>
+        funtion printErr(elemId,hintMsg) {
+            document.getElementById(elemId).innerHTML = hintMsg;
+        }
+
+        function validateForm() {
+            var name = document.contactForm.name.value;
+            var email = document.contactForm.email.value;
+            var number = document.contactForm.number.value;
+            var country = document.contactForm.country.value;
+            var gender = document.contactForm.gender.value;
+
+            var nameErr=emailErr=numberErr=countryErr=genderErr=true;
+
+            //name error
+            if (name == "") {
+                printErr("nameErr" , "Please enter a name");
+            }
+
+            else {
+                var regex = /^[a-zA-Z\s]+$/;
+                if (regex.test(name)==false) {
+                    printErr("nameErr","Please enter a valid name");
+                }
+
+                else {
+                    printErr("nameErr" , "");
+                    nameErr=false;
+                }
+            }
+
+            //email error
+            if (email=="") {
+                printErr("emailErr" , "Please enter an email");
+            }
+
+            else {
+                if (regex.test(email)==false) {
+                    printErr("emailErr" , "Please enter a valid email");
+                }
+
+                else {
+                    printErr("emailErr" , "");
+                    emailErr=false;
+                }
+            }
+
+            //number error
+            if (number=="") {
+                printErr("numebrErr" , "Please enter a phone number"); 
+            }
+
+            else {
+                var regex = /^[1-9]\d{9}+$/;
+                if (regex.test(number)==false) {
+                    printErr("numberErr" , "Please enter a valid phone number");
+                }
+
+                else {
+                    printErr("numberErr" , "");
+                    numberErr=false;
+                }
+            }
+
+            //country error
+            if(country=="") {
+                printErr("countryErr" , "Please select a country");
+            }
+
+            else {
+                printErr("countryErr" , "");
+                countryErr=false;
+            }
+
+            //gender error
+            if (gender=="") {
+                printErr("genderErr" , "Please choose a gender");
+            }
+
+            else {
+                printErr("genderErr" , "");
+                genderErr=false;
+            }
+
+            if((nameErr || emailErr || numberErr || countryErr || genderErr == true)) {
+                return false;
+            }
+
+            else {
+                var dataPreview = "You have entered the below details : " + "\n" +
+                                  "Name: " + name + "\n" +
+                                  "Email Id: " + email + "\n" +
+                                  "Phone Number:" + number + "\n" +
+                                  "Country: " + country + "\n" +
+                                  "Gender :" + gender + "\n" + ;
+
+                alert(dataPreview);
+            }
+
+
+        };
+       </script> 
+    </head>
+
+    <body>
+        <form name="form" onsubmit="return validateForm()" method="post">
+            <div class="row">
+                <label>Full Name</label>
+                <input type="text" name="name">
+                <div class="error" id="nameErr"></div>
+            </div>
+
+            <div class="row">
+                <label>Email ID</label>
+                <input type="text" name="email">
+                <div class="error" id="emailErr"></div>
+            </div>
+
+            <div class="row">
+                <label>Country</label>
+                <select name="country">
+                    <option>Select</option>
+                    <option>India</option>
+                    <option>US</option>
+                    <option>Australia</option>
+                </select>
+                <div class="error" id="countryErr"></div>
+            </div>
+
+            <div class="row">
+                <label>Gender</label>
+                <div class="form-inline">
+                    <label><input type="radio" name="gender" value="male">Male</label>
+                    <label><input type="radio" name="gender" value="female">Female</label>
+                </div>
+                <div class="error" id="genderErr"></div>
+            </div>
+        </form>
+    </body>
+</html>
