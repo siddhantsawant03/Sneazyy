@@ -101,6 +101,10 @@ body {
     display: table;
 
   }
+  .figcaption{
+    text-align: center;
+    color: white;
+  }
 
   .sneak{
     width: 280px;

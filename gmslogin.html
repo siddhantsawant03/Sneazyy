@@ -4,6 +4,11 @@
 <title>Login</title>
 <link rel="stylesheet" type="text/css" href="gmslogin.css">
 <link rel="icon" type="image.png" href="C:\NMIMS\Web Programming\Images\apple-touch-icon.png">
+<style>
+.blur {
+  filter: blur(5px);
+}
+</style>
 <script>
 
 function showLoginForm() {
@@ -56,22 +61,21 @@ passwordErr = false;
 }
 
 };
-
 </script>
 </head>
 <body>
 
-<div id="login-box">
+
+        
+
 <form name="loginForm" action="admin_login.php" onsave="return validateForm()" method="post">
 <h3>Login Here</h3>
-
 
 <div class="row">
 <label> <B>Username</label>
 <input type="text" name="username">
 <div class="error" id="usernameErr"></div>
 </div>
-
 
 <div class="row">
 <label> <B>Password</label>
@@ -91,8 +95,9 @@ passwordErr = false;
 <div class="row">
 <input type="submit" value="Submit" name="save">
 </div>
-</div>
 
 </form>
+
+
 </body>
 </html>
