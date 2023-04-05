@@ -6,6 +6,18 @@
 <link rel="icon" type="image.png" href="C:\NMIMS\Web Programming\Images\apple-touch-icon.png">
 <script>
 
+function showLoginForm() {
+  var loginForm = document.getElementById("login-form");
+  document.body.classList.add("blur");
+  loginForm.style.display = "block";
+}
+
+function hideLoginForm() {
+  var loginForm = document.getElementById("login-form");
+  document.body.classList.remove("blur");
+  loginForm.style.display = "none";
+}
+
 function printError(elemId, hintMsg){
 document.getElementById(elemId).innerHTML = hintMsg;
 }
@@ -49,6 +61,7 @@ passwordErr = false;
 </head>
 <body>
 
+<div id="login-box">
 <form name="loginForm" action="admin_login.php" onsave="return validateForm()" method="post">
 <h3>Login Here</h3>
 
@@ -77,6 +90,7 @@ passwordErr = false;
 
 <div class="row">
 <input type="submit" value="Submit" name="save">
+</div>
 </div>
 
 </form>

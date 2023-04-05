@@ -22,6 +22,7 @@ if(isset($_POST['save']))
     }else{
         echo "Invalid Details";
     }
+
 //     $result = $conn->query($sql);
 //     if ($result->num_rows > 0) {
 //         header('Location: admindashboard.php');
