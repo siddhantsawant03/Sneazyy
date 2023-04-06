@@ -3,8 +3,10 @@
 <head>
 	<title>Sneazyy</title>
 	<link rel="stylesheet" href="Nav Bar.css">
+	<link rel="stylesheet" type="text/css" href="../Sneazyy/table.css">
 	<link rel="icon" type="image.png" href="../Sneazyy/Images/apple-touch-icon.png">
 	<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' rel='stylesheet'>
+	<script src="../Sneazyy/angular.min.js"></script>
 </head>
 <body>
 	<header>
@@ -24,6 +26,9 @@
 			<div class="search">
 				<input type="text" name="search" id="search" placeholder="Search Anything">
 			</div>
+			<li>
+				<a href="#"><i class="fa fa-shopping-cart"></i></a>
+			</li>
 		</nav>
 
 
@@ -100,13 +105,13 @@
 			</center>			
 		</div>
 
-		<!-- <div>
+		<div>
 			<img class="img1" src="C:\NMIMS\Web Programming\Images\img1.jpg">
 			<div class="text">YEEZYS COLLECTION</div>
 			<img class="img2" src="C:\NMIMS\Web Programming\Images\img2.png">
 			<br>
 			<a href="#" class="btn1">Shop Now</a>
-		</div> -->
+		</div>
 
 		<br><br><br>
 
@@ -122,6 +127,50 @@
 
 		<br><br><br>
 	</center>
+	<div ng-controller="storeCtrl" style="text-align: center;">
+		<h2>Find an Outlet near you!</h2>
+		<input type="text" ng-model="search" placeholder="Search by Location" style="
+		  padding: 10px;
+		  font-size: 16px;
+		  border: none;
+		  border-radius: 5px;
+		  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+		  outline: none;
+		  width: 100%;
+		  max-width: 400px;
+		  margin: 0 auto;">
+        <br>
+		<br>
+		<table class="styledtable" style="text-align: left;">
+		<thead>
+			<tr>
+			<th>Name</th>
+			<th>Location</th>
+			<th>Phone Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="store in stores | filter:search">
+			<td>{{store.name}}</td>
+			<td>{{store.location}}</td>
+			<td>{{store.phonenumber}}</td>
+			</tr>
+		</tbody>
+		</table> 
+		</div> 
+		<br>
+		<script>
+		var app = angular.module('storeApp', []);
+		app.controller('storeCtrl', function($scope) {
+		$scope.stores = [
+			{ name: 'John Smith', location: 'Khanda Colony', phonenumber: 9384345343 },
+			{ name: 'Sarah Johnson', location: 'Kamothe', phonenumber: 8973645374},
+			{ name: 'Michael Brown', location: 'New Panvel', phonenumber: 9834777284 },
+			{ name: 'Karen Davis', location: 'Old Panvel', phonenumber: 8945039574 },
+			{ name: 'David Lee', location: 'Vichumbe', phonenumber: 9845383923 }
+		];
+		});
+		</script>
 
 	<section class="footer">
 

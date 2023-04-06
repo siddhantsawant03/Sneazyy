@@ -9,7 +9,7 @@ include('sign_up.php');
 <title>Signup</title>
 <link rel="stylesheet" href="gmssignup.css">
 <link rel="icon" type="image.png" href="C:\NMIMS\Web Programming\Images\apple-touch-icon.png">
-<!-- <script>
+<script>
 // Defining a function to display error message
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
@@ -83,32 +83,32 @@ function validateForm() {
     } else {
         printError("genderErr", "");
         genderErr = false;
-    } -->
+    } 
 
-    <!-- // validate password
-    // if(pass == "") {
-    //     printError("passErr", "Please enter a password");
-    // } else {
-    //     // Regular expression for basic email validation
-    //     var regex = /^(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])(?=\D*\d)(?=[^!#%]*[!#%])[A-Za-z0-9!#%]{8,32}$/;
-    //     if(regex.test(email) === false) {
-    //         printError("passErr", "Please enter a valid password");
-    //     } else{
-    //         printError("passErr", "");
-    //         passErr = false;
-    //     }
-    // }
+    // validate passwor
+    if(pass == "") {
+        printError("passErr", "Please enter a password");
+    } else {
+    // Regular expression for basic email validation
+    var regex = /^(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z])(?=\D*\d)(?=[^!#%]*[!#%])[A-Za-z0-9!#%]{8,32}$/;
+    if(regex.test(email) === false) {
+            printError("passErr", "Please enter a valid password");
+         } else{
+             printError("passErr", "");
+         passErr = false;
+     }
+    
 
-    // if(conpass == "") {
-    //     printError("conpassErr", "Please enter a valid password");
-    // } else {
-    //     if(regex.test(email) != pass) {
-    //         printError("conpassErr", "Please enter a valid password");
-    //     } else{
-    //         printError("conpassErr", "");
-    //         conpassErr = false;
-    //     }
-    // }
+    if(conpass == "") {
+    printError("conpassErr", "Please enter a valid password");
+    } else {
+    if(regex.test(email) != pass) {
+    printError("conpassErr", "Please enter a valid password");
+    } else{
+    printError("conpassErr", "");
+    conpassErr = false;
+    }
+    }
     
     // Prevent the form from being submitted if there are any errors
     if((nameErr || emailErr || mobileErr || countryErr || genderErr || passErr || conpassErr) == true) {
@@ -128,8 +128,9 @@ function validateForm() {
         // Display input data in a dialog box before submitting the form
         alert(dataPreview);
     }
-}; -->
-<!-- </script> -->
+}
+}; 
+</script>
 </head>
 <body>
 <form action="sign_up.php" name="contactForm" method="post">
@@ -192,7 +193,7 @@ function validateForm() {
     </div>
 
     <div class="row">
-        <input type="submit" value="Submit" name="save">
+        <input type="submit" value="Submit" name="save" onclick="validateForm()">
     </div>
 </form>
 </body>
