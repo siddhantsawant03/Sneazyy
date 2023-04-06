@@ -287,3 +287,6 @@
  .footer .credit span{
     color:var(--main-color);
  }
+ .cart{
+  color: black;
+ }
