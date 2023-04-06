@@ -14,13 +14,13 @@ if(isset($_POST['save']))
 {
     $fullname = $_POST['name'];
     $emailaddress = $_POST['email'];
-    $mobilenumber = $_POST['mobile'];
-    $country = $_POST['country'];
-    $gender = $_POST['gender'];
+    $mobilenumber = $_POST['mno'];
+    // $country = $_POST['country'];
+    // $gender = $_POST['gender'];
     $password = $_POST['pass'];
-    $confirmpassword = $_POST['conpass'];
+    // $confirmpassword = $_POST['conpass'];
     
-    $sql_query = "INSERT INTO sneazysignup (fullname,emailaddress,mobilenumber,country,gender,password,confirmpassword) VALUES ('$fullname','$emailaddress','$mobilenumber','$country','$gender','$password','$confirmpassword')";
+    $sql_query = "INSERT INTO signup (name,email,phone,password) VALUES ('$fullname','$emailaddress','$mobilenumber','$password')";
     
     if(mysqli_query($conn,$sql_query)){
         echo "New SignUp  Details inserted successfully!";

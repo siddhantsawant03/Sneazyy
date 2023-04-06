@@ -14,7 +14,7 @@
 
     <body ng-app="">
         <div class="con">
-            <form name="myform" novalidate>
+            <form name="myform" action="sign_up.php" novalidate >
                 <h1>Form</h1>
                 <label>Full Name</label>
                 <input type="text" name="name" ng-model="name" pattern="[a-zA-Z]{1,}" required><br>
@@ -36,7 +36,7 @@
                     <span class="error" ng-show="((myform.mno.$error.minlength || myform.mno.$error.maxlength) && myform.mno.$dirty)">Mobile Number must be 10 digits</span>
                 </span><br><br>
 
-                <label>Gender</label><br>
+                <!-- <label>Gender</label><br>
                 <input type="radio" name="gender" ng-model="gender" ng-value="Male" required>
                 <label>Male</label>
                 <input type="radio" name="gender" ng-model="gender" ng-value="Female" required>
@@ -44,8 +44,8 @@
                 <input type="radio" name="gender" ng-model="gender" ng-value="Others" required>
                 <label>Others</label>
                 <span ng-show="myform.$submitted || myform.gender.$dirty">
-                    <span class="error" ng-show="myform.gender.$error.required">Choose an option</span>
-                </span><br><br>
+                <span class="error" ng-show="myform.gender.$error.required">Choose an option</span> -->
+                <!-- </span><br><br> -->
 
                 <!-- <label>Date of Birth</label>
                 <input type="date" name="date" ng-model="date" required><br>
@@ -53,18 +53,20 @@
                     <span class="error" ng-show="myform.date.$error.required">Choose a date</span>
                 </span><br><br> -->
 
-                <label>Address</label>
-                <textarea name="address" ng-model="address" required></textarea><br>
+                <!-- <label>Address</label> -->
+                <!-- <textarea name="address" ng-model="address" required></textarea><br>
                 <span ng-show="myform.$submitted || myform.address.$dirty">
                     <span class="error" ng-show="myform.address.$error.required">Address is required</span>
-                </span><br><br>
+                </span><br><br> -->
 
                 <label>Password</label>
-                <input type="text" name="pass" ng-model="pass" pattern="[a-zA-Z]{8,}" required><br>
+                <input type="text" name="pass" ng-model="pass" pattern="[a-zA-Z0-9]{8,}" required><br>
                 <span ng-show="myform.$submitted || myform.pass.$dirty">
                     <span class="error" ng-show="myform.pass.$error.required">Password required</span>
                     <span class="error" ng-show="myform.pass.$error.pattern">Password not valid</span>
                 </span><br><br>
+
+                
 
                 <!-- <label>Course</label>
                 <select name="course" ng-model="course" required>
@@ -77,7 +79,7 @@
                 </span> -->
 
                 <div class="row">
-                    <input type="submit" value="Submit" onclick="validateForm()" name="save">
+                    <input type="submit" value="save" name="save">
                 </div>
             </form>
         </div>
